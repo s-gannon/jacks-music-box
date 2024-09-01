@@ -4,5 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+dioxus = "0.5.6"
+freya = "0.2.2"
+home = "0.5.9"
+rfd = "0.14.1"
 rodio = "0.19.0"
-rtmidi = "0.2.0"
