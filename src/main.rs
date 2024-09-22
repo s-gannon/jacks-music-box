@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::BufReader;
 use rodio::{Decoder, OutputStream, Sink, source::Source};	// Rust audio
 // use rtmidi::{RtMidiIn, RtMidiOut, RtMidiError};		// getting MIDI input
-// use rfd::FileDialog;	// picking files
+use rfd::FileDialog;	// picking files
 use freya::prelude::*;
 use freya::hotreload::FreyaCtx;
 
@@ -67,6 +67,10 @@ const VERSION:&str = "v0.1.0";
 // }
 
 fn main() {
+	let files = FileDialog::new()
+		.add_filter("music", &["mp3", "wav"])
+		.set_directory("/")
+		.pick_file();
 	// Get an output stream handle to the default physical sound device
 	let (_stream, stream_handle) = OutputStream::try_default().unwrap();
 	let sink = Sink::try_new(&stream_handle).unwrap();
