@@ -106,7 +106,7 @@ fn main() {
 
 	let mut user_input = String::new();
 	loop {
-		println!("Enter one of the following options into the prompt:");
+		println!("\nEnter one of the following options into the prompt:");
 		println!("p: pause");
 		println!("n: next");
 		println!(">: play");
